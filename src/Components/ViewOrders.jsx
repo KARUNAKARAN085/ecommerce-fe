@@ -1,16 +1,14 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import './viewProduct.css';
 
-const ViewProducts = () => {
-  const products = useLoaderData();
-
-  console.log(products);
-
+const ViewOrders = () => {
+    const products = useLoaderData();
+    console.log(products);
   return (
     <div className="">
-      <h1>Products</h1>
+      <h1>Orders</h1>
       <div className="container">
-        {products.data.products.map((product, index) => {
+        {products.data.orders.map((product, index) => {
           return (
             <div key={index} className="m-3 g-col-4">
               <div className="card">
@@ -21,18 +19,13 @@ const ViewProducts = () => {
                 />
                 <div className="card-body">
                     <div className="both">
-                        <h5 className="card-title">{product.name}</h5>
                         <li className="list-group-item text-success ">
                             <b>Price: ${product.price}</b>
                         </li>
                     </div>
-                  <p className="card-text">{product.description}</p>
-                  <p className="card-text text-secondary">Category: {product.category}</p>
-                  <li className="list-group-item text-danger">Stock: {product.stock}</li>
-                  <br />
-                  <Link class="btn btn-primary position-absolute bottom-0 end-0 m-2">
-                    Add to Card
-                  </Link>
+                  <p className="card-text text-secondary">product_id: {product.products[0].product}</p>
+                  <p className="card-text text-secondary">user_id: {product.user}</p>
+                  <li className="list-group-item text-danger">Quantity: {product.products[0].quantity}</li>
                 </div>
               </div>
             </div>
@@ -40,7 +33,7 @@ const ViewProducts = () => {
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ViewProducts;
+export default ViewOrders

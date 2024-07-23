@@ -1,17 +1,19 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./Components/Home";
 import HomeWrapper from "./Wrappers/HomeWrapper";
-import Register from "./components/Register";
-import Login from "./components/Login";
+import Register from "./Components/Register";
+import Login from "./Components/Login";
 import DashboardWrapper from "./Wrappers/DashboardWrapper";
 import userLoaders from "./loaders/userLoaders";
 import ProtectedRoute from "./Routes/ProtectedRoute";
 import LoginRoute from "./Routes/LoginRoute";
 import AdminDashboardWrapper from "./Wrappers/AdminDashboardWrapper";
-import CreateProduct from "./components/CreateProduct";
+import CreateProduct from "./Components/CreateProduct";
 import AdminRoute from "./Routes/AdminRoute";
-import ViewProducts from "./components/ViewProducts";
+import ViewProducts from "./Components/ViewProducts";
 import productLoaders from "./loaders/productLoaders";
+import ViewOrders from "./Components/ViewOrders";
+import orderLoaders from "./loaders/orderLoaders";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +26,7 @@ const router = createBrowserRouter([
         element: <HomeWrapper />,
         children: [
           {
-            path: "/",
+            path: "",
             element: <Home />
           },
           {
@@ -76,6 +78,11 @@ const router = createBrowserRouter([
               {
                 path: "products",
                 element: <CreateProduct />
+              },
+              {
+                path: "orders",
+                element: <ViewOrders />,
+                loader: orderLoaders.ViewOrders,
               }
             ]
           }

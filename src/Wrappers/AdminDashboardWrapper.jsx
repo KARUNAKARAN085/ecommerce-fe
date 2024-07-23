@@ -1,6 +1,6 @@
 import { Link, Outlet, useLoaderData, useNavigate } from "react-router-dom";
 import userServices from "../services/userServices";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../Components/Sidebar";
 
 const AdminDashboardWrapper = () => {
 
@@ -24,7 +24,9 @@ const AdminDashboardWrapper = () => {
     <div className="mx-2">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
               <div className="container-fluid">
-                  <Link className="navbar-brand" to="/">Admin Dashboard</Link>
+                  <Link className="navbar-brand" >
+                  <Link to="/"></Link>
+                  Admin Dashboard</Link>
                   <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                       <span className="navbar-toggler-icon"></span>
                   </button>

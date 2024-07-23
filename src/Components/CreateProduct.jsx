@@ -8,7 +8,7 @@ const CreateProduct = () => {
     const [description, setDescription] = useState('');
     const [image, setImage] = useState('');
     const [category, setCategory] = useState('');
-    const [countInStock, setCountInStock] = useState('');
+    const [stock, setStock] = useState('');
 
     const updateImage = (e) => {
 
@@ -25,10 +25,11 @@ const CreateProduct = () => {
 
         const product = {
             name,
+            image,
             price,
             description,
             category,
-            countInStock
+            stock
         }
 
         // create a new product
@@ -76,7 +77,10 @@ const CreateProduct = () => {
               
               <div className="mb-3">
                     <label htmlFor="category" className="form-label">Category</label>
-                    <select className="form-select" id="category">
+                    <select className="form-select" id="category"
+                        onChange={(e) => setCategory(e.target.value)}
+                        value={category}
+                    >
                         <option>Electronics</option>
                         <option>Books</option>
                         <option>Home</option>
@@ -86,7 +90,10 @@ const CreateProduct = () => {
               
               <div className="mb-3">
                   <label htmlFor="countInStock" className="form-label">Count In Stock</label>
-                    <input type="number" className="form-control" id="countInStock" />
+                    <input type="number" className="form-control" id="countInStock" 
+                        onChange={(e) => setStock(e.target.value)}
+                        value={stock}
+                    />
               </div>
                   
 

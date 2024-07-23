@@ -1,6 +1,6 @@
 import { Link, Outlet, useLoaderData, useNavigate } from "react-router-dom";
 import userServices from "../services/userServices";
-import UserSidebar from "../components/UserSidebar";
+import UserSidebar from "../Components/UserSidebar";
 
 const DashboardWrapper = () => {
 
@@ -44,7 +44,7 @@ const DashboardWrapper = () => {
           </nav>
           
           <div className="row mt-5">
-              <div className="col-md-3">
+              <div className="col-md-3 text-center">
                   <UserSidebar />
               </div>
 
